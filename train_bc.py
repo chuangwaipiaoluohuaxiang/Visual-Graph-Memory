@@ -54,7 +54,7 @@ def train():
     config.TORCH_GPU_ID = args.gpu
     config.freeze()
 
-    policy = eval(config.POLICY)(
+    policy = eval(config.POLICY)(  #POLICY在configs/vgm.yaml定义了。POLICY=VGMPolicy
         observation_space=observation_space,
         action_space=action_space,
         hidden_size=config.features.hidden_size,
